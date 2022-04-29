@@ -26,10 +26,10 @@ public class Source {
             lineNum++;
     }
     public char currentChar(){
-
        return line.charAt(currentPos);
     }
     public char nextChar(){
-
+        currentPos++;
+        return currentChar();
     }
 }
