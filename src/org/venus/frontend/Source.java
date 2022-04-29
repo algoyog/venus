@@ -1,6 +1,7 @@
 package org.venus.frontend;
 
 import java.io.BufferedReader;
+import java.rmi.server.ExportException;
 
 public class Source {
     public static final char EOF = '\n';
@@ -16,5 +17,19 @@ public class Source {
         this.lineNum = 0;
         this.currentPos = -2;//NEED TO THNK
         this.bufferedReader = bufferedReader;
+    }
+
+    public void readLine() throws Exception {
+        line = bufferedReader.readLine();
+        currentPos = -1;
+        if(line!=null)
+            lineNum++;
+    }
+    public char currentChar(){
+
+       return line.charAt(currentPos);
+    }
+    public char nextChar(){
+
     }
 }
