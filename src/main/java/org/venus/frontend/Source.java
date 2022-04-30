@@ -1,12 +1,11 @@
 package org.venus.frontend;
 
 import java.io.BufferedReader;
-import java.rmi.server.ExportException;
 
 public class Source {
     public static final char EOF = '\n';
     public static final char EOL = (char) 0;
-    private BufferedReader bufferedReader;
+    private final BufferedReader bufferedReader;
     private Token currentToken;
     private String line;
     private int lineNum;
@@ -22,13 +21,27 @@ public class Source {
     public void readLine() throws Exception {
         line = bufferedReader.readLine();
         currentPos = -1;
-        if(line!=null)
+        if (line != null)
             lineNum++;
     }
-    public char currentChar(){
-       return line.charAt(currentPos);
+
+    public char currentChar() throws Exception {
+        if (currentPos == -2) {
+            readLine();
+            return nextChar();
+        } else if (line == null) {
+            return EOF;
+        } else if (currentPos == line.length()) {
+            return EOL;
+        } else if (currentPos > line.length()) {
+            readLine();
+            return nextChar();
+        } else {
+            return line.charAt(currentPos);
+        }
     }
-    public char nextChar(){
+
+    public char nextChar() throws Exception {
         currentPos++;
         return currentChar();
     }
