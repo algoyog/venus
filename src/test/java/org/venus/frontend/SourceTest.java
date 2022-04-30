@@ -14,7 +14,7 @@ public class SourceTest {
             System.out.println(ch);
             ch = src.nextChar();
         }
-        assertEquals("1","1");
+        assertEquals(ch,Source.EOF);
 
     }
 
