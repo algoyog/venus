@@ -1,4 +1,4 @@
-package org.venus.frontend;
+package org.venus.base.frontend;
 
 public abstract class Parser {
 }

@@ -2,7 +2,7 @@ package org.venus;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.venus.frontend.Source;
+import org.venus.base.frontend.Source;
 import org.venus.testutils.Utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
