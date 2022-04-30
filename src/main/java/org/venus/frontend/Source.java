@@ -45,4 +45,12 @@ public class Source {
         currentPos++;
         return currentChar();
     }
+
+    public void close() throws Exception{
+        if(bufferedReader!=null) {
+            bufferedReader.close();
+        }
+    }
+
+
 }

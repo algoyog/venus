@@ -15,7 +15,6 @@ public class SourceTest {
             ch = src.nextChar();
         }
         assertEquals(ch,Source.EOF);
-
     }
 
 }
