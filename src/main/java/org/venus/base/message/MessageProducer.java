@@ -1,4 +1,7 @@
 package org.venus.base.message;
 
-public class MessageProducer {
+public interface MessageProducer {
+    public void addMessageListener();
+    public void removeMessageListener();
+    public void sendMessage(Message message);
 }

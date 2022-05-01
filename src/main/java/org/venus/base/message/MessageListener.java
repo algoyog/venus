@@ -1,4 +1,5 @@
 package org.venus.base.message;
 
-public class MessageListener {
+public interface MessageListener {
+    public void messageReceived(Message message);
 }
