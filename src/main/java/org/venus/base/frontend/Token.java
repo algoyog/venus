@@ -1,6 +1,6 @@
 package org.venus.base.frontend;
 
-public class Token {
+public abstract class Token {
     protected TokenType tokenType;
     protected String text;
     protected Object value;
@@ -15,8 +15,12 @@ public class Token {
         extract();
     }
 
-    private void extract() {
+    public abstract void  extract();
+    public char currentChar() throws Exception{
+        return source.currentChar();
     }
-
+    public char nextChar() throws Exception{
+        return source.nextChar();
+    }
 
 }
